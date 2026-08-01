@@ -37,3 +37,40 @@ jobs:
           node -v
           npm -v
           which node
+
+      - name: "Show runner OS and architecture"
+        run: |
+          echo "Runner OS: $RUNNER_OS"
+          echo "Runner architecture: $RUNNER_ARCH"
+          echo "Runner name: $RUNNER_NAME"
+          echo "Runner environment: $RUNNER_ENVIRONMENT"
+
+      - name: "Show detailed OS info"
+        run: |
+          echo "--- Operating System ---"
+          cat /etc/os-release
+          echo "--- Kernel ---"
+          uname -a
+
+      - name: "Show CPU info"
+        run: |
+          echo "--- CPU ---"
+          lscpu | grep -E '^CPU\(s\)|Model name|Socket|Thread|Core'
+
+      - name: "Show memory info"
+        run: |
+          echo "--- Memory ---"
+          free -h
+
+      - name: "Show disk usage"
+        run: |
+          echo "--- Disk ---"
+          df -h
+
+      - name: "Show all environment variables"
+        run: env | sort
+
+      - name: "Show GitHub runner image version"
+        run: |
+          echo "Image version: $ImageVersion"
+          echo "Image OS: $ImageOS"
