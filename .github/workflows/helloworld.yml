@@ -13,3 +13,6 @@ jobs:
 
       - name: "printing java"
         run: echo "java"
+
+      - name: "Printing all folders if any"
+        run: ls
