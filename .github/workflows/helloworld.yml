@@ -3,6 +3,7 @@ name: "Helloworld workflow"
 on:
   push:
     branches: master
+  workflow_dispatch:
 
 jobs:
   hello_world:
@@ -18,7 +19,7 @@ jobs:
         run: ls
 
       - name: "Making folder"
-        run: mkdir Krish jain
+        run: mkdir "Krish jain"
 
       - name: "Printing all folders if any"
         run: ls
