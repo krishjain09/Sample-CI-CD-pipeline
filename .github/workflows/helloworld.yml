@@ -31,3 +31,9 @@ jobs:
 
       - name: "Printing all folders if any"
         run: ls
+
+      - name: Check Node version
+        run: |
+          node -v
+          npm -v
+          which node
